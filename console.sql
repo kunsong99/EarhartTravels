@@ -1,6 +1,6 @@
 CREATE TABLE flights
 (
-    filight_id INT PRIMARY KEY  NOT NULL,
+    flight_id INT PRIMARY KEY  NOT NULL,
     flight_number VARCHAR(10),
     aircraft_id	INT NOT NULL ,
     departure_airport INT,
@@ -16,3 +16,15 @@ CREATE TABLE airports
     city	VARCHAR(50)	,
     country	VARCHAR(50)
     );
+
+CREATE TABLE schedules
+(
+schedule_id	INT PRIMARY KEY NOT NULL,
+flight_id	INT REFERENCES flights(flight_id) ON DELETE NO ACTION,
+departure_date DATE,
+departure_time TIME,
+arrival_date DATE,
+arrival_time TIME,
+status	VARCHAR(10) --ENUM (On Time, Delayed, Canceled)	Status of the flight
+);
+
