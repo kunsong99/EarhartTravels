@@ -7,3 +7,12 @@ CREATE TABLE flights
     arrival_airport INT,
     duration TIME
 );
+
+CREATE TABLE airports
+(
+    airport_id	INT PRIMARY KEY NOT NULL ,
+    airport_code	VARCHAR(10),	--IATA or ICAO code of the airport
+    name	VARCHAR(100),
+    city	VARCHAR(50)	,
+    country	VARCHAR(50)
+    );
